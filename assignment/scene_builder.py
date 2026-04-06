@@ -77,36 +77,79 @@ building = cmds.polyCube(
 # Raise the building so its base sits on the ground plane.
 cmds.move(building_x, building_height / 2.0, building_z, building)
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 2
-# Create a second object using a DIFFERENT primitive type than the cube above.
-# Remember to:
-#   - Use descriptive variable names for size and position.
-#   - Name the object meaningfully with the 'name' parameter or cmds.rename().
-#   - Position it so it sits on the ground (not floating or buried).
-# ---------------------------------------------------------------------------
+epic_sphere_width = 5
+epic_sphere_height = 8
+epic_sphere_depth = 3
+epic_sphere_radius = 1
+epic_sphere_x = -10
+epic_sphere_z = 10
 
+epic_sphere = cmds.polySphere(
+    name_="epic_sphere",
+    radius=epic_sphere_height,
+    depth=epic_sphere_depth,
+    height=epic_sphere_height,
+    width=epic_sphere_width,
+)[0]
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 3
-# ---------------------------------------------------------------------------
+cmds.move(
+    epic_sphere_x, epic_sphere_height / 2.0, epic_sphere_z, epic_sphere
+)
 
+cylinder_building_width = 3
+cylinder_building_height = 10
+cylinder_building_depth = 4
+cylinder_building_radius =5
+cylinder_building_x = 8
+cylinder_building_z = -5
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 4
-# ---------------------------------------------------------------------------
+cylinder_building = cmds.polyCylinder(
+    name_="cylinder_building",
+    radius=cylinder_building_radius,
+    depth=cylinder_building_depth,
+    height=cylinder_building_height,
+    width=cylinder_building_width,
+)[0]
 
+cmds.move(
+    cylinder_building_x, cylinder_building_height / 2.0, cylinder_building_z, cylinder_building
+)
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 5
-# ---------------------------------------------------------------------------
+building_02_width = 6
+building_02_height = 12
+building_02_depth = 4
+building_x = 2
+building_z = 3
 
+building_02 = cmds.polyCube(
+    name_="building_02",
+    width=building_02_width,
+    height=building_02_height,
+    depth=building_02_depth,
+)[0]
 
-# ---------------------------------------------------------------------------
-# TODO (Optional): Add more objects to make your scene more interesting!
-# Consider: trees, lamp posts, fences, vehicles, animals, etc.
-# ---------------------------------------------------------------------------
+cmds.move(
+    building_02, building_02_height / 2.0, building_z, building_02
+)
 
+magical_cone_radius = 1
+magical_cone_width = 2
+magical_cone_depth = 3
+magical_cone_height = 4
+magical_cone_x = 1
+magical_cone_z = -1
+
+magical_cone = cmds.polyCone(
+    name_="magical_cone",
+    radius=magical_cone_radius,
+    depth=magical_cone_depth,
+    height=magical_cone_height,
+    width=magical_cone_width,
+)[0]
+
+cmds.move(
+    magical_cone, magical_cone_height / 2.0, magical_cone_z, magical_cone
+)
 
 # ---------------------------------------------------------------------------
 # Frame All -- so the whole scene is visible in the viewport.
